@@ -7,4 +7,4 @@ urlpatterns = [
     path("search/",views.Search.as_view(), name="Create"),
     path("vault/<int:id>/",views.Get_vault.as_view(), name="View_List"),
     path("passwd/<int:id>",views.Get_passwd.as_view(), name="View_List"),
-] 
+]
