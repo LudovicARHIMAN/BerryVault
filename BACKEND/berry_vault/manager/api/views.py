@@ -5,11 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from manager.models import Vault, Passwords
 
 
-
 class Add_password(APIView):
-    pass
-
-class Home(APIView):
     pass
 
 

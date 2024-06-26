@@ -2,7 +2,6 @@ from rest_framework import serializers
 from manager.models import Vault, Passwords
 
 
-
 class VaultSerializer(serializers.ModelSerializer):
     '''
     Serializing Vault
@@ -11,6 +10,7 @@ class VaultSerializer(serializers.ModelSerializer):
         model = Vault
         fields = ('vault_id','user','vault_name')
 
+
 class PasswordsSerializer(serializers.ModelSerializer):
     '''
     Serializing Passwords
@@ -18,5 +18,3 @@ class PasswordsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Passwords
         fields = ('vault','pass_name','login','password','site','favorite')
-    
-

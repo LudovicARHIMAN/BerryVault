@@ -1,9 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-
 import uuid
 
-# Create your models here.
+
 class Vault(models.Model):
     vault_id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name="vault",null=False)
@@ -23,3 +22,6 @@ class Passwords(models.Model):
 
     def __str__(self):
         return self.pass_name
+    
+    class Meta:
+        verbose_name_plural = "Passwords"
