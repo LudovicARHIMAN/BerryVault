@@ -80,6 +80,7 @@ class Get_vault(APIView):
 
 
 class Get_passwd(APIView):
+
     permission_classes = (IsAuthenticated,)
 
     def get(self,request):
