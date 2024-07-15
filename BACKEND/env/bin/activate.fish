@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/ludovicarhiman/Workspace/Code/Projects/Berry-Vault/env"
+set -gx VIRTUAL_ENV "/home/reverse/Workspace/Code/Projects/Berry-Vault/BACKEND/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

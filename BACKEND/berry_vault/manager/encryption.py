@@ -7,17 +7,6 @@ import hashlib
 import hmac
 
 
-
-def password_check(password):
-    '''
-    check if the password the user try to use is the master password
-    Will return a bool in consequence (valid or invalid master password)
-    '''
-    pass
-
-
-
-
 ############### Code de mystique de stack overflow ###############
 
 # Define a function to derive a key from a password using PBKDF2
