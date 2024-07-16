@@ -8,7 +8,7 @@ from .serializer import VaultSerializer, PasswordsSerializer, UserRegisterSerial
 from rest_framework.authentication import SessionAuthentication
 from manager.validations import custom_validation, validate_email, validate_password
 from rest_framework import status
-from django.contrib.auth import get_user_model, login, logout
+from django.contrib.auth import login, logout
 
 
 ### Handle user from API ###
@@ -59,12 +59,7 @@ class UserView(APIView):
 ### Handle user from API ###
 
 
-
-class Add_password(APIView):
-    # permission_classes = (IsAuthenticated,)
-    pass
-
-
+### Manage passwords ###
 class Search(APIView):
     # permission_classes = (IsAuthenticated,)
     pass 
@@ -79,13 +74,34 @@ class Get_vault(APIView):
         return Response(serializer.data)
 
 
-class Get_passwd(APIView):
+## Manage passwords (Add a new password, delete/edit an existing password and get a specific password from an id)
+class Add_passwd(APIView):
+	permission_classes = (IsAuthenticated,)
+	
+	def post(self,request):
+		
+		pass
 
-    permission_classes = (IsAuthenticated,)
 
-    def get(self,request):
-        queryset = Passwords.objects.all()
-        serializer = PasswordsSerializer(queryset,many=True)
-        return Response(serializer.data)
+class Edit_passwd(APIView):
+	permission_classes = (IsAuthenticated,)
+
+	def post(self,request):
+		pass
     
 
+class Del_passwd(APIView):
+	permission_classes = (IsAuthenticated,)
+
+	def post(self,request):
+		pass
+
+
+class Get_passwd(APIView):
+	'''get a password by his id '''
+	permission_classes = (IsAuthenticated,)
+
+	def get(self,request):
+		queryset = Passwords.objects.all()
+		serializer = PasswordsSerializer(queryset,many=True)
+		return Response(serializer.data)
