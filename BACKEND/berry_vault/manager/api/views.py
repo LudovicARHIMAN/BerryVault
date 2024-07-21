@@ -61,12 +61,16 @@ class UserView(APIView):
 
 class MasterPassCheck(APIView):
 	"""
-	Perform an hash check and return a bool depending on the result of the check dddd
+	# TODO: Perform an hash check and return a bool depending on the result of the check dddd
 	"""
 	permission_classes = (IsAuthenticated,)
 
 	def post(self,request, master_pass):
 		pass
+
+	
+
+
 
 ### Handle user from API ###
 
