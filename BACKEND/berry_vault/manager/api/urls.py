@@ -8,14 +8,15 @@ urlpatterns = [
     path('token/', obtain_auth_token, name="obtain"),
 
 
-    # handle password/vault
+    # handle password
     path("add_password/",views.Add_passwd.as_view(), name="Add_Password"),
-    path("edit_password/",views.Edit_passwd.as_view(),name="Edit_Password"),
-    path("del_password/",views.Del_passwd.as_view(),name="Del_Password"),
-    path("get_passwd/",views.Get_passwd.as_view(), name="Get_Password"),
+    path("edit_password/<str:pass_name>/",views.Edit_passwd.as_view(),name="Edit_Password"),
+    path("del_password/<str:pass_name>/",views.Del_passwd.as_view(),name="Del_Password"),
+    path("get_passwd/<str:pass_name>/",views.Get_passwd.as_view(), name="Get_Password"),
 
-    path("search/",views.Search.as_view(), name="Search"),
-    path("vault/",views.Get_vault.as_view(), name="Vault"),
+    # handle vault
+    path("get_vault/<int:id>/",views.Get_vault.as_view(), name="Get_Vault"),
+    path("new_vault/<str:vault_name>/",views.New_vault.as_view(), name="New_Vault"),
     
     
     # handle user

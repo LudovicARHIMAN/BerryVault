@@ -52,7 +52,7 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
 	def __str__(self):
 		return self.email
 	
-### Manage users from the api with a custom table ###
+
 
 ### Manage passwords and vault in the database ###
 class Vault(models.Model):
@@ -63,18 +63,16 @@ class Vault(models.Model):
     def __str__(self):
         return self.vault_name
     
-
 class Passwords(models.Model):
-    vault = models.ForeignKey(Vault, on_delete=models.CASCADE)
-    pass_name = models.CharField(primary_key=True,max_length=255)
-    login = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
-    site = models.CharField(max_length=255,null=True)
-    favorite = models.BooleanField(default=False)
+	vault = models.ForeignKey(Vault, on_delete=models.CASCADE)
+	pass_name = models.CharField(primary_key=True,max_length=255)
+	login = models.CharField(max_length=255)
+	password = models.CharField(max_length=255)
+	site = models.CharField(max_length=255,null=True)
+	favorite = models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.pass_name
-    
-    class Meta:
-        verbose_name_plural = "Passwords"
-### Manage passwords and vault in the database ###
+	def __str__(self):
+		return self.pass_name
+
+	class Meta:
+		verbose_name_plural = "Passwords"
