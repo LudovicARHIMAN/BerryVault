@@ -56,6 +56,18 @@ class UserView(APIView):
 	def get(self, request):
 		serializer = UserSerializer(request.user)
 		return Response({'user': serializer.data}, status=status.HTTP_200_OK)
+	
+
+
+class MasterPassCheck(APIView):
+	"""
+	Perform an hash check and return a bool depending on the result of the check dddd
+	"""
+	permission_classes = (IsAuthenticated,)
+
+	def post(self,request, master_pass):
+		pass
+
 ### Handle user from API ###
 
 
