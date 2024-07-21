@@ -132,7 +132,6 @@ class Del_passwd(APIView):
 
 
 class Get_passwd(APIView):
-	'''get a password by his id '''
 	permission_classes = (IsAuthenticated,)
 
 	def get(self, request, pass_name):
