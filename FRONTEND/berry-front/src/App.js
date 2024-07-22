@@ -150,7 +150,7 @@ function App() {
             </Button>
           </Form>
         </div>        
-      ) : (
+      ) : ( // 
         <div className="center">
           <Form onSubmit={e => submitLogin(e)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
