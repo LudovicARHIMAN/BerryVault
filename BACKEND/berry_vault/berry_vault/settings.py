@@ -27,12 +27,18 @@ SECRET_KEY = 'django-insecure-o=z6(ynq(^k6x&z&y3kw()yvmi_!a8=^z+gnqs$632nx6fz_xd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1","0.0.0.0"]
+ALLOWED_HOSTS = []
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    'http://0.0.0.0',
+    'http://0.0.0.0:3000',
+]
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://0.0.0.0:3000',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -46,9 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
-    'manager.apps.ManagerConfig',
     'corsheaders',
+    'manager.apps.ManagerConfig',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +144,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+STATIC_URL = 'static/'
 STATIC_URL = 'static/'
 
 # Default primary key field type

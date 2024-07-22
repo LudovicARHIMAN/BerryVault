@@ -33,7 +33,6 @@ class UserLogin(APIView):
 		assert validate_email(data)
 		assert validate_password(data)
 		serializer = UserLoginSerializer(data=data)
-		
 		if serializer.is_valid(raise_exception=True):
 			user = serializer.check_user(data)
 			login(request, user)
@@ -43,7 +42,6 @@ class UserLogin(APIView):
 class UserLogout(APIView):
 	permission_classes = (AllowAny,)
 	authentication_classes = ()
-	
 	def post(self, request):
 		logout(request)
 		return Response(status=status.HTTP_200_OK)
@@ -61,7 +59,7 @@ class UserView(APIView):
 
 class MasterPassCheck(APIView):
 	"""
-	# TODO: Perform an hash check and return a bool depending on the result of the check dddd
+	# TODO: Perform an hash check and return a bool depending on the result of the check (used by client to decrypt all the passwords)
 	"""
 	permission_classes = (IsAuthenticated,)
 
